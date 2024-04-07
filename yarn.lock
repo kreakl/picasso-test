@@ -224,7 +224,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@feature-sliced/eslint-config@npm:^0.1.0-beta.6":
+"@feature-sliced/eslint-config@npm:0.1.0-beta.6":
   version: 0.1.0-beta.6
   resolution: "@feature-sliced/eslint-config@npm:0.1.0-beta.6"
   peerDependencies:
@@ -232,6 +232,17 @@ __metadata:
     eslint-plugin-boundaries: ">=2"
     eslint-plugin-import: ">=2"
   checksum: 10c0/a50416468ad35ea2fd6013acce40c8a489988f0e1a2ebaeb9d2d33bcc412483059da6d85e74a434e667dc130b4ef864540a16f176bd7be0d2859deb206f10869
+  languageName: node
+  linkType: hard
+
+"@feature-sliced/eslint-config@patch:@feature-sliced/eslint-config@npm%3A0.1.0-beta.6#~/.yarn/patches/@feature-sliced-eslint-config-npm-0.1.0-beta.6-6ce2b5d509.patch":
+  version: 0.1.0-beta.6
+  resolution: "@feature-sliced/eslint-config@patch:@feature-sliced/eslint-config@npm%3A0.1.0-beta.6#~/.yarn/patches/@feature-sliced-eslint-config-npm-0.1.0-beta.6-6ce2b5d509.patch::version=0.1.0-beta.6&hash=ade55b"
+  peerDependencies:
+    eslint: ">=6"
+    eslint-plugin-boundaries: ">=2"
+    eslint-plugin-import: ">=2"
+  checksum: 10c0/4568dc537eeb988771314ed4da7a468df85e8e137441329891311eceea3205a0458f61923b30d777c08e5251a2e39441358cb7821fd895828d36e1ccc0e2afe3
   languageName: node
   linkType: hard
 
@@ -3239,7 +3250,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "picasso@workspace:."
   dependencies:
-    "@feature-sliced/eslint-config": "npm:^0.1.0-beta.6"
+    "@feature-sliced/eslint-config": "patch:@feature-sliced/eslint-config@npm%3A0.1.0-beta.6#~/.yarn/patches/@feature-sliced-eslint-config-npm-0.1.0-beta.6-6ce2b5d509.patch"
     "@types/react": "npm:^18.2.66"
     "@types/react-dom": "npm:^18.2.22"
     "@typescript-eslint/eslint-plugin": "npm:^7.2.0"
