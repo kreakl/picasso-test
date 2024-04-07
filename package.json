@@ -11,8 +11,10 @@
     "postinstall": "husky"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0"
   },
   "devDependencies": {
     "@feature-sliced/eslint-config": "patch:@feature-sliced/eslint-config@npm%3A0.1.0-beta.6#~/.yarn/patches/@feature-sliced-eslint-config-npm-0.1.0-beta.6-6ce2b5d509.patch",

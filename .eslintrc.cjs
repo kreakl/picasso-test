@@ -13,21 +13,13 @@ module.exports = {
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: './tsconfig.json'
+    project: 'tsconfig.json'
   },
   plugins: ['react-refresh'],
   rules: {
     'import/prefer-default-export': 'off',
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        'js': 'never',
-        'jsx': 'never',
-        'ts': 'never',
-        'tsx': 'never'
-      }
-    ],
+    'import/no-extraneous-dependencies': 'off',
+    'import/extensions': 'off',
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
