@@ -9,35 +9,37 @@ import { PostCard } from '@/entities/post';
 import { LazyListWrapper } from '@/shared/ui/lazy-list-wrapper';
 import { Link } from 'react-router-dom';
 
-const START = 0;
 const LIMIT = 10;
+const START = 0;
 
 export function PostList() {
   const [start, setStart] = useState(START);
-  const { data, isFetching  } = useGetAllPostsQuery({ start: start, limit: LIMIT });
+  const { data, isFetching  } = useGetAllPostsQuery({ start, limit: LIMIT });
   const { data: posts = [], totalCount = LIMIT } = data || {};
-  const hasNextPage = start < totalCount - LIMIT;
+
+  const hasNextPage = posts.length < totalCount;
 
   return (
     <>
       <LazyListWrapper
         isNextPageLoading={isFetching}
-        loadNextPage={() => setStart((start) => start + LIMIT)}
+        loadNextPage={() => setStart(() => posts.length)}
         total={posts.length}
         hasNextPage={hasNextPage}
       >
         {({ index, style, isLoading  }) => (
-          <div className="flex flex-col" style={style}>
+          <div style={style}>
             <PostCard
-              index={index + 1}
+              index={posts[index]?.id}
               title={posts[index]?.title}
               body={posts[index]?.body}
               isLoading={isLoading}
+              variant={'clamped'}
             >
               <PostCardHeader />
               <PostCardContent />
               <PostCardBottomAction>
-                <Link to={`/post/${posts[index].id}`}>Просмотр</Link>
+                <Link to={`/post/${posts[index]?.id}`}>Просмотр</Link>
               </ PostCardBottomAction>
             </PostCard>
           </div>

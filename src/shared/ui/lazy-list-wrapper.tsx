@@ -26,7 +26,7 @@ export function LazyListWrapper({
     <InfiniteLoader
       isItemLoaded={isItemLoaded}
       itemCount={itemsCount}
-      loadMoreItems={loadNextPage}
+      loadMoreItems={loadMoreItems}
     >
       {({ onItemsRendered, ref }) => (
         <AutoSizer>

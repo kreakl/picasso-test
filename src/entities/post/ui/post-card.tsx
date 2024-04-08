@@ -1,5 +1,6 @@
 import { PropsWithChildren, ReactNode } from 'react';
 import { PostContext, PostProvider, usePostContext } from '@/entities/post/model/post-context';
+import { clsx } from 'clsx';
 
 type PostCardProps = PostContext & {
   children: ReactNode;
@@ -12,9 +13,9 @@ export function PostCard({ children, ...props }: PostCardProps) {
     <PostProvider value={props}>
       {
         isLoading ? (
-          <div className="px-4 py-6 text-gray-100 text-4xl">Loading...</div>
+          <div className="px-2 py-4 md:px-4 md:py-6 text-gray-100 text-4xl">Loading...</div>
         ) : (
-          <div className="px-4 py-6">
+          <div className="px-2 py-4 md:px-4 md:py-6">
             {children}
           </div>
         )
@@ -24,15 +25,19 @@ export function PostCard({ children, ...props }: PostCardProps) {
 }
 
 export function PostCardHeader() {
-  const { title, index } = usePostContext();
+  const { title, index, variant } = usePostContext();
 
   return (
     <div
-      className="flex gap-4 items-center capitalize "
+      className="text-4xl flex gap-2 md:gap-4 items-center capitalize"
     >
-      <div className="text-4xl text-gray-400">{index}</div>
+      {index && (
+        <div className="text-gray-400">{index}</div>
+      )}
       <h2
-        className=" text-4xl font-semibold text-gray-200 overflow-ellipsis whitespace-nowrap overflow-hidden"
+        className={clsx('font-semibold text-gray-200', {
+          'overflow-ellipsis whitespace-nowrap overflow-hidden': variant === 'clamped',
+        })}
       >
         {title}
       </h2>
@@ -41,10 +46,10 @@ export function PostCardHeader() {
 }
 
 export function PostCardContent() {
-  const { body } = usePostContext();
+  const { body , variant } = usePostContext();
 
   return (
-    <div className="line-clamp-2">
+    <div className={clsx('', { 'line-clamp-2': variant === 'clamped' })}>
       <p className="mt-3 text-2xl text-gray-500 capitalize">
         {body}
       </p>
@@ -54,7 +59,7 @@ export function PostCardContent() {
 
 export function PostCardBottomAction({ children }: PropsWithChildren) {
   return (
-    <div className="px-4 text-2xl text-cyan-700 cursor-pointer underline underline-offset-2">
+    <div className="mt-2 md:px-4 text-2xl text-cyan-700 cursor-pointer underline underline-offset-4">
       {children}
     </div>
   );

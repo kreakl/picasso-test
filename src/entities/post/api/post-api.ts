@@ -5,6 +5,11 @@ const POST_COUNT = 0;
 
 export const postApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
+    getPostById: builder.query<Post, number>({
+      query: (id) => ({
+        url: `/posts/${id}`,
+      }),
+    }),
     getAllPosts: builder.query<{ data: Post[], totalCount: number },
     { start: number, limit: number }>({
       query: ({ start, limit }) => ({
@@ -28,10 +33,14 @@ export const postApi = baseApi.injectEndpoints({
         });
       },
       forceRefetch({ currentArg, previousArg }) {
-        return currentArg !== previousArg;
+        if (currentArg && previousArg) {
+          return currentArg.start > previousArg.start;
+        }
+
+        return true;
       },
     }),
   }),
 });
 
-export const { useGetAllPostsQuery, useLazyGetAllPostsQuery } = postApi;
+export const { useGetAllPostsQuery, useGetPostByIdQuery } = postApi;
