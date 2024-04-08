@@ -2,7 +2,7 @@
   "name": "picasso",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://kreakl.github.io/picasso",
+  "homepage": "https://kreakl.github.io/picasso-test",
   "type": "module",
   "scripts": {
     "dev": "vite",
