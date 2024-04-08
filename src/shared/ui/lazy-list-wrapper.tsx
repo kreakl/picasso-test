@@ -1,6 +1,7 @@
 import InfiniteLoader from 'react-window-infinite-loader';
 import { FixedSizeList } from 'react-window';
 import { CSSProperties, ReactNode } from 'react';
+import AutoSizer from 'react-virtualized-auto-sizer';
 
 type LazyListWrapperProps = {
   hasNextPage?: boolean;
@@ -28,16 +29,20 @@ export function LazyListWrapper({
       loadMoreItems={loadNextPage}
     >
       {({ onItemsRendered, ref }) => (
-        <FixedSizeList
-          height={500}
-          itemSize={300}
-          width={1000}
-          itemCount={itemsCount}
-          onItemsRendered={onItemsRendered}
-          ref={ref}
-        >
-          {({ index, style }) => children({ index, style, isLoading: !isItemLoaded(index) })}
-        </FixedSizeList>
+        <AutoSizer>
+          {({ width, height }) => (
+          <FixedSizeList
+            height={height}
+            itemSize={300}
+            width={width}
+            itemCount={itemsCount}
+            onItemsRendered={onItemsRendered}
+            ref={ref}
+          >
+            {({ index, style }) => children({ index, style, isLoading: !isItemLoaded(index) })}
+          </FixedSizeList>
+          )}
+        </AutoSizer>
       )}
     </InfiniteLoader>
   );
