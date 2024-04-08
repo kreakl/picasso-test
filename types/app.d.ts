@@ -1,4 +1,6 @@
 declare global {
+  export type Url = string
+
   /**
    * ⚠️ FSD
    *

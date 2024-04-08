@@ -17,8 +17,11 @@ module.exports = {
   },
   plugins: ['react-refresh'],
   rules: {
+    'import/no-internal-modules': 'off',
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': 'off',
+    "react/require-default-props": "off",
+    "react/react-in-jsx-scope": "off",
     'import/extensions': 'off',
     'react-refresh/only-export-components': [
       'warn',

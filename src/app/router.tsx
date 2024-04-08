@@ -1,9 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { MainPage } from '@/page/main';
 
 export const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Button sx={{ paddingTop: '10px' }}>Click</Button>
+    path: '/',
+    element: <MainPage />,
   },
 ]);
