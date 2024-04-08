@@ -32,7 +32,7 @@ export function Post({ postId }: PostProps) {
       </div>
       <PostCardContent />
       <PostCardBottomAction>
-        <Link to="/">Назад</Link>
+        <Link to="../">Назад</Link>
       </ PostCardBottomAction>
     </PostCard>
   );

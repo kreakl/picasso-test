@@ -39,7 +39,7 @@ export function PostList() {
               <PostCardHeader />
               <PostCardContent />
               <PostCardBottomAction>
-                <Link to={`/post/${posts[index]?.id}`}>Просмотр</Link>
+                <Link to={`./post/${posts[index]?.id}`}>Просмотр</Link>
               </ PostCardBottomAction>
             </PostCard>
           </div>
