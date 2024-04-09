@@ -12,11 +12,6 @@
     "postinstall": "husky"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@mui/icons-material": "^5.15.15",
-    "@mui/material": "^5.15.15",
-    "@mui/system": "^5.15.15",
     "@reduxjs/toolkit": "^2.2.3",
     "clsx": "^2.1.0",
     "lodash": "^4.17.21",
@@ -26,8 +21,7 @@
     "react-router-dom": "^6.22.3",
     "react-virtualized-auto-sizer": "^1.0.24",
     "react-window": "^1.8.10",
-    "react-window-infinite-loader": "^1.0.9",
-    "tailwind-variants": "^0.2.1"
+    "react-window-infinite-loader": "^1.0.9"
   },
   "devDependencies": {
     "@feature-sliced/eslint-config": "patch:@feature-sliced/eslint-config@npm%3A0.1.0-beta.6#~/.yarn/patches/@feature-sliced-eslint-config-npm-0.1.0-beta.6-6ce2b5d509.patch",

@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: ['react-refresh'],
   rules: {
+    "linebreak-style": ["error", "windows"],
     'import/no-internal-modules': 'off',
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': 'off',
