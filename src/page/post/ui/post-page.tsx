@@ -1,6 +1,6 @@
-import { Loader } from '@/shared/ui/loader';
 import { useLoaderData } from 'react-router-dom';
 import { Post } from '@/widgets/post';
+import { Loader } from '@/shared/ui/loader';
 
 export function PostPage() {
   const { postId } = useLoaderData() as { postId: number };
@@ -14,5 +14,5 @@ export function PostPage() {
         </div>
       </div>
     </>
-  )
+  );
 }

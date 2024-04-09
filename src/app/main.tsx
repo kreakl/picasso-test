@@ -10,9 +10,9 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-      <ReduxProvider store={appStore}>
-        <CssBaseline />
-        <RouterProvider router={router} />
-      </ReduxProvider>
+    <ReduxProvider store={appStore}>
+      <CssBaseline />
+      <RouterProvider router={router} />
+    </ReduxProvider>
   </React.StrictMode>,
 );

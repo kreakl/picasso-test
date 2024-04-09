@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 import { Loader } from '@/shared/ui/loader';
 
 export function Root() {
@@ -9,5 +9,5 @@ export function Root() {
         <Outlet />
       </div>
     </>
-  )
+  );
 }

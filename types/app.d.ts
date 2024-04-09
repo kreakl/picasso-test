@@ -1,5 +1,5 @@
 declare global {
-  export type Url = string
+  export type Url = string;
 
   /**
    * ⚠️ FSD

@@ -1,10 +1,10 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 import { config } from '@/shared/lib';
 import { MainPage } from '@/page/main';
 import { PostPage } from '@/page/post';
 import { Root } from '@/page/root';
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: `${config.BASE_URL}`,
     element: <Root />,

@@ -1,6 +1,6 @@
+import { clsx } from 'clsx';
 import { PropsWithChildren, ReactNode } from 'react';
 import { PostContext, PostProvider, usePostContext } from '@/entities/post/model/post-context';
-import { clsx } from 'clsx';
 
 type PostCardProps = PostContext & {
   children: ReactNode;
@@ -46,7 +46,7 @@ export function PostCardHeader() {
 }
 
 export function PostCardContent() {
-  const { body , variant } = usePostContext();
+  const { body, variant } = usePostContext();
 
   return (
     <div className={clsx('', { 'line-clamp-2': variant === 'clamped' })}>

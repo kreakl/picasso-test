@@ -4,13 +4,13 @@ import {
   PostCardBottomAction,
   PostCardContent,
   PostCardHeader,
-  useGetPostByIdQuery
+  useGetPostByIdQuery,
 } from '@/entities/post';
 import { useGetUserByIdQuery } from '@/entities/user';
 
 type PostProps = {
   postId: number;
-}
+};
 
 export function Post({ postId }: PostProps) {
   const { data: post, isSuccess } = useGetPostByIdQuery(postId);
@@ -33,7 +33,7 @@ export function Post({ postId }: PostProps) {
       <PostCardContent />
       <PostCardBottomAction>
         <Link to="../">Назад</Link>
-      </ PostCardBottomAction>
+      </PostCardBottomAction>
     </PostCard>
   );
 }
